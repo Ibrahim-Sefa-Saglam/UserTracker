@@ -1,11 +1,9 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Sidebar from './components/Sidebar.vue'
-</script>
-
 <template>
-  
-  <Sidebar></Sidebar>
-  <HelloWorld msg="Vite + Vue" />
+  <div class="min-h-screen flex flex-col">
+    <!-- This is where pages will render -->
+    <router-view />
+  </div>
 </template>
 
+<script setup lang="ts">
+</script>
