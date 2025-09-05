@@ -4,9 +4,9 @@ import { useRoute } from "vue-router";
 
 const route = useRoute();
 
-const lastSegment = computed(() => {
-  const path = route.path;
-  return path.substring(path.lastIndexOf("/") + 1);
+const section = computed(() => {
+  const parts = route.path.split("/");
+  return parts[1] || ""; // e.g. /todos/1 -> "todos"
 });
 
 const navItems = [
@@ -19,7 +19,7 @@ const navItems = [
 <template>
   <div class="w-1/7 bg-[#F5F5F5] border border-[#D8D9DD] flex flex-col py-8">
     <!-- USERS PAGE -->
-    <template v-if="lastSegment === 'users'">
+    <template v-if="section === 'users'">
       <router-link
         to="/users"
         class="gap-2 flex flex-row mb-2 py-2 px-2 items-center 
@@ -54,12 +54,12 @@ const navItems = [
         :key="item.name"
         :to="`/${item.name}`"
         class="gap-2 flex flex-row mb-2 py-2 px-2 items-center rounded transition"
-        :class="lastSegment === item.name 
+        :class="section === item.name 
           ? 'bg-white text-[#4F359B]' 
           : 'text-gray-500 hover:text-[#4F359B] hover:bg-gray-200'"
       >
         <div
-          v-if="lastSegment === item.name"
+          v-if="section === item.name"
           class="w-1 h-full rounded-tr-[4px] rounded-br-[4px] bg-[#4F359B]"
         ></div>
         <span>{{ item.label }}</span>
