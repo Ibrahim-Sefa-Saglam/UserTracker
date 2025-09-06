@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import Sidebar from '../components/Sidebar.vue'
+import PostContentModal from '../components/PostContentModal.vue'
 
 interface Post {
   userId: number
@@ -12,6 +13,13 @@ interface Post {
 
 const router = useRouter()
 const posts = ref<Post[]>([])
+
+const showModal = ref(false)
+const selectedPost = ref({
+  id: 1,
+  title: 'Sample Post',
+  body: 'This is the body of the post...'
+})
 
 // fetch posts
 onMounted(async () => {
@@ -33,7 +41,8 @@ const goHome = () => {
 
 // handle see more click (modal logic to be added later)
 const seeMore = (post: Post) => {
-  console.log("Show modal for post:", post)
+  selectedPost.value = post
+  showModal.value = true
 }
 </script>
 
@@ -100,4 +109,11 @@ const seeMore = (post: Post) => {
       </div>
     </div>
   </div>
+  
+  <PostContentModal 
+    :post="selectedPost" 
+    :show="showModal" 
+    @close="showModal = false"
+  />
+
 </template>
