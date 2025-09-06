@@ -22,7 +22,7 @@ const navItems = [
     <template v-if="section === 'users'">
       <router-link
         to="/users"
-        class="gap-2 flex flex-row mb-2 py-2 px-2 items-center 
+        class="gap-2 flex flex-row mb-2 py-2  items-center 
               bg-white text-[#4F359B] hover:bg-gray-600 rounded"
       >
         <div class="w-1 h-full rounded-tr-[4px] rounded-br-[4px] bg-[#4F359B]"></div>
@@ -53,7 +53,7 @@ const navItems = [
         v-for="item in navItems"
         :key="item.name"
         :to="`/${item.name}`"
-        class="gap-2 flex flex-row mb-2 py-2 px-2 items-center rounded transition"
+        class="gap-2 flex flex-row mb-2 py-2 items-center rounded transition"
         :class="section === item.name 
           ? 'bg-white text-[#4F359B]' 
           : 'text-gray-500 hover:text-[#4F359B] hover:bg-gray-200'"
@@ -61,6 +61,10 @@ const navItems = [
         <div
           v-if="section === item.name"
           class="w-1 h-full rounded-tr-[4px] rounded-br-[4px] bg-[#4F359B]"
+        ></div>
+        <div
+          v-if="section !== item.name"
+          class="w-1 h-full pl-2 rounded-tr-[4px] rounded-br-[4px] "
         ></div>
         <span>{{ item.label }}</span>
       </router-link>
