@@ -6,7 +6,7 @@
     <!-- User Photo -->
     <div class="flex flex-row items-center gap-4">
       <img 
-        src="https://via.placeholder.com/80" 
+        src="https://picsum.photos/80 " 
         alt="User Photo" 
         class="w-20 h-20 rounded-full object-cover border"
       />
