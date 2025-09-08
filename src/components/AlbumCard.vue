@@ -36,6 +36,6 @@ onMounted(async () => {
         class="w-full h-full object-cover "
       />
     </div>
-    <p class="mt-2 text-center text-sm font-medium text-left py-5 pl-2">{{ props.album.title }}</p>
+    <p class="mt-2 text-center text-sm font-poppins font-regular text-left py-5 pl-2">{{ props.album.title }}</p>
   </div>
 </template>

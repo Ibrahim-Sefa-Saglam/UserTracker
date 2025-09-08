@@ -11,34 +11,34 @@
         class="w-20 h-20 rounded-full object-cover"
       />
       <div>
-        <h2 class="font-semibold text-lg">{{ user.name }}</h2>
-        <p class="text-sm text-gray-600">{{ user.email }}</p>
-        <p class="text-sm text-gray-600">{{ user.phone }}</p>
+        <h2 class="font-poppins font-semibold text-lg">{{ user.name }}</h2>
+        <p class="font-poppins text-sm text-gray-600">{{ user.email }}</p>
+        <p class="font-poppins text-sm text-gray-600">{{ user.phone }}</p>
       </div>
     </div>
 
     <!-- User Info -->
     <div class="mt-4 ml-4 flex flex-col justify-center space-y-1">
-      <p class="text-sm font-[500] flex gap-3">
+      <p class="font-poppins text-sm font-medium flex gap-3">
         Location
       </p>
-      <p class="text-sm font-[300]">
+      <p class="font-poppins text-sm font-light">
         {{ user.address.street }}<br>
         {{ user.address.city }}
       </p>
 
-      <p class="text-sm font-[500] flex gap-3">
+      <p class="font-poppins text-sm font-medium flex gap-3">
         Company location
       </p>
-      <p class="text-sm font-[300]">
+      <p class="font-poppins text-sm font-light">
         {{ user.address.street }}<br>
         {{ user.address.city }}
       </p>
 
-      <p class="text-sm font-[500] flex gap-3">
+      <p class="font-poppins text-sm font-medium flex gap-3">
         Website
       </p>
-      <p class="text-sm font-[300]">
+      <p class="font-poppins text-sm font-light">
         <a :href="'https://' + user.website" target="_blank">{{ user.website }}</a>
       </p>
     </div>

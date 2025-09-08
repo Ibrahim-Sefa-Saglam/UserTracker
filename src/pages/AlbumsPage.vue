@@ -66,12 +66,12 @@ const selectAlbum = async (albumId: number) => {
               <path d="M5 10h11a4 4 0 1 1 0 8h-1" />
             </svg>
           </button>
-          <span class="ml-4">Go Albums</span>
+          <span class="font-poppins font-bold ml-4">Go Albums</span>
         </header>
       </template>
  
 
-   <!-- Conditional container -->
+   <!-- Album cards N Album Photos -->
 <template v-if="!selectedAlbumId">
   <div class="grid grid-cols-3 gap-4 mt-4 place-items-center h-4/5 overflow-y-auto p-2 pl-5">
     <AlbumCard

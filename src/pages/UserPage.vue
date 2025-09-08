@@ -3,7 +3,7 @@
     <Sidebar />
 
     <div class="flex-1 flex flex-col">  
-      <header class="px-10 py-8 text-xl font-bold">All Users</header>
+      <header class="px-10 py-8 text-xl font-poppins font-bold">All Users</header>
       
       <!-- Scrollable grid -->
       <div class="grid grid-cols-3 gap-4 mt-4 place-items-center

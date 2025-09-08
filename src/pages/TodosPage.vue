@@ -76,7 +76,7 @@ const toggleTodo = async (todo: Todo) => {
           </div>
 
           <!-- Text (92.5%) -->
-          <div class="text-gray-800 leading-snug" style="width: 92.5%;">
+          <div class="font-poppins text-gray-800 leading-snug" style="width: 92.5%;">
             {{ todo.title }}
           </div>
         </div>

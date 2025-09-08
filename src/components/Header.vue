@@ -31,6 +31,6 @@ const goHome = () => {
         </svg>
     </button>
 
-    <span class="ml-10">Go Home</span>
+    <span class="ml-10 font-poppins font-regular">Go Home</span>
   </header>
 </template>

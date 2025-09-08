@@ -53,10 +53,10 @@ onMounted(async () => {
       />
       <!-- Name + Email -->
       <div class="flex flex-col">
-        <span class="text-sm font-medium text-gray-800">
+        <span class="font-poppins text-sm text-gray-800">
           {{ selectedUser.name }}
         </span>
-        <span class="text-xs text-gray-500 underline">
+        <span class="font-poppins font-light text-sm text-gray-500 underline">
           {{ selectedUser.email }}
         </span>
       </div>
@@ -87,7 +87,7 @@ onMounted(async () => {
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
           <path d="M21 21v-2a4 4 0 0 0 -3 -3.85" />
         </svg>
-        <span>Users</span>
+        <span class="font-poppins ">Users</span>
       </router-link>
     </template>
 
@@ -110,7 +110,7 @@ onMounted(async () => {
           v-else
           class="w-1 h-full pl-2 rounded-tr-[4px] rounded-br-[4px]"
         ></div>
-        <span>{{ item.label }}</span>
+        <span class="font-poppins ">{{ item.label }}</span>
       </router-link>
     </template>
      
@@ -120,10 +120,10 @@ onMounted(async () => {
         alt="Profile"
         class="w-10 h-10 rounded-full object-cover"
       />
-      <span class="font-bold font-medium text-gray-800 ">
+      <span class="font-poppins font-bold font-medium text-gray-800 ">
         N2Mobil
       </span>
     </div>
-
+    
   </div>
 </template>

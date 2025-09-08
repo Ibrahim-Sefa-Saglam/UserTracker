@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
 import Sidebar from '../components/Sidebar.vue'
 import PostContentModal from '../components/PostContentModal.vue'
 import Header from "../components/Header.vue";
@@ -12,7 +11,6 @@ interface Post {
   body: string
 }
 
-const router = useRouter()
 const posts = ref<Post[]>([])
 
 const showModal = ref(false)
@@ -35,12 +33,7 @@ onMounted(async () => {
   }
 })
 
-// navigate back
-const goHome = () => {
-  router.push('/users')
-}
 
-// handle see more click (modal logic to be added later)
 const seeMore = (post: Post) => {
   selectedPost.value = post
   showModal.value = true
@@ -63,17 +56,17 @@ const seeMore = (post: Post) => {
           class=" w-full p-4  mb-0 border-b border-gray-300  rounded-sm  relative "
         >
           <!-- Title -->
-          <h3 class="font-semibold text-gray-900 mb-2">{{ post.title }}</h3>
+          <h3 class="font-poppins font-semibold text-gray-900 mb-2">{{ post.title }}</h3>
 
           <!-- Body, max 3 lines -->
-          <p class="mb-15  mt-5 text-gray-700 text-sm max-w-7/10 leading-snug line-clamp-3">
+          <p class="mb-15  mt-5 font-poppins text-gray-700 text-sm max-w-7/10 leading-snug line-clamp-3">
             {{ post.body }}
           </p>
 
           <!-- See more -->
           <div class="absolute bottom-2 right-2 flex items-center gap-1 text-[#4F359B] text-sm cursor-pointer"
                @click="seeMore(post)">
-            <span>See more</span>
+            <span class="font-poppins">See more</span>
             <!-- Add your icon here -->
             <svg  xmlns="http://www.w3.org/2000/svg"  
                 width="24"  height="24"  
