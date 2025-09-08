@@ -8,7 +8,7 @@
       <img 
         src="https://picsum.photos/80 " 
         alt="User Photo" 
-        class="w-20 h-20 rounded-full object-cover border"
+        class="w-20 h-20 rounded-full object-cover"
       />
       <div>
         <h2 class="font-semibold text-lg">{{ user.name }}</h2>

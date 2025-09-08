@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const route = useRoute();
@@ -14,15 +14,59 @@ const navItems = [
   { name: "posts", label: "Posts" },
   { name: "albums", label: "Albums" },
 ];
+
+// --- Selected User Info ---
+const selectedUser = ref<{ name: string; email: string } | null>(null);
+
+onMounted(async () => {
+  const userId = localStorage.getItem("selectedUserId");
+  if (userId) {
+    try {
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/users/${userId}`
+      );
+      if (!res.ok) throw new Error("Failed to fetch user");
+      const data = await res.json();
+      selectedUser.value = {
+        name: data.name,
+        email: data.email,
+      };
+    } catch (err) {
+      console.error("Error fetching user:", err);
+    }
+  }
+});
 </script>
 
 <template>
   <div class="w-1/7 bg-[#F5F5F5] border border-r-[#D8D9DD] flex flex-col py-8">
+    <!-- SELECTED USER SECTION -->
+    <div
+      v-if="selectedUser && section !== 'users'"
+      class="flex flex-row items-center gap-3 px-4 pb-3 mb-4 border-b  border-gray-300 mx-4"
+    >
+      <!-- Profile Picture Placeholder -->
+      <img
+        src="https://picsum.photos/80 " 
+        alt="Profile"
+        class="w-10 h-10 rounded-full object-cover"
+      />
+      <!-- Name + Email -->
+      <div class="flex flex-col">
+        <span class="text-sm font-medium text-gray-800">
+          {{ selectedUser.name }}
+        </span>
+        <span class="text-xs text-gray-500 underline">
+          {{ selectedUser.email }}
+        </span>
+      </div>
+    </div>
+
     <!-- USERS PAGE -->
     <template v-if="section === 'users'">
       <router-link
         to="/users"
-        class="gap-2 flex flex-row mb-2 py-2  items-center 
+        class="gap-2 flex flex-row mb-2 py-2 items-center 
               bg-white text-[#4F359B] hover:bg-gray-600 rounded"
       >
         <div class="w-1 h-full rounded-tr-[4px] rounded-br-[4px] bg-[#4F359B]"></div>
@@ -48,7 +92,7 @@ const navItems = [
     </template>
 
     <!-- TODOS / POSTS / ALBUMS PAGES -->
-    <template v-else> 
+    <template v-else>
       <router-link
         v-for="item in navItems"
         :key="item.name"
@@ -63,8 +107,8 @@ const navItems = [
           class="w-1 h-full rounded-tr-[4px] rounded-br-[4px] bg-[#4F359B]"
         ></div>
         <div
-          v-if="section !== item.name"
-          class="w-1 h-full pl-2 rounded-tr-[4px] rounded-br-[4px] "
+          v-else
+          class="w-1 h-full pl-2 rounded-tr-[4px] rounded-br-[4px]"
         ></div>
         <span>{{ item.label }}</span>
       </router-link>

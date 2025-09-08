@@ -42,7 +42,7 @@ watch(
       
       <!-- Header 7% -->
       <div class="flex justify-between items-start px-6 py-2 h-[7%] ">
-        <h2 class="text-lg font-bold">{{ post.title }}</h2>
+        <h2 class="text-2xl  font-bold">{{ post.title }}</h2>
         <button @click="$emit('close')" class="text-gray-600 hover:text-gray-900 font-bold">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="30"  height="30"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-square-rounded-x"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10l4 4m0 -4l-4 4" /><path d="M12 3c7.2 0 9 1.8 9 9s-1.8 9 -9 9s-9 -1.8 -9 -9s1.8 -9 9 -9z" /></svg>
         </button>
@@ -57,8 +57,8 @@ watch(
         </div>
 
         <!-- Comments 4/9 -->
-        <div class="p-4 flex flex-col overflow-y-auto">
-          <h3 class="font-semibold mb-4">Comments</h3>
+        <div class="px-4 pb-8 flex flex-col overflow-y-auto">
+          <h1 class="font-semibold text-2xl mb-4">Comments</h1>
           
           <div v-for="comment in comments" :key="comment.id" class="flex flex-row py-2 rounded-sm">
             <!-- Profile picture 1/5 -->
