@@ -17,7 +17,7 @@ const navItems = [
 </script>
 
 <template>
-  <div class="w-1/7 bg-[#F5F5F5] border border-[#D8D9DD] flex flex-col py-8">
+  <div class="w-1/7 bg-[#F5F5F5] border border-r-[#D8D9DD] flex flex-col py-8">
     <!-- USERS PAGE -->
     <template v-if="section === 'users'">
       <router-link
