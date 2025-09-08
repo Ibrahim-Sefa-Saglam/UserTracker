@@ -71,8 +71,12 @@ const router = useRouter();
 
 
 const goToTodos = () => {
+  // store user id
   localStorage.setItem("selectedUserId", String(props.user.id));
-  console.log("Selected User ID stored in localStorage:", localStorage.getItem("selectedUserId"));
+  // store placeholder profile picture  
+  // logging for debug
+  console.log("Selected User ID:", localStorage.getItem("selectedUserId"));
+  // navigate
   router.push({ name: "Todos" });
 };
 </script>
