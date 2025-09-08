@@ -24,15 +24,16 @@ onMounted(async () => {
 
 <template>
   <div
-    class="border border-[#5C6672] rounded shadow hover:shadow-lg transition cursor-pointer w-full h-full flex flex-col"
+    class="border border-[#D8D9DD] rounded rounded-xl shadow hover:shadow-lg transition cursor-pointer w-full h-full flex flex-col"
     @click="emit('select', props.album.id)"
   >
-    <div class="grid grid-cols-2 ">
+  
+    <div class="grid grid-cols-2 overflow-hidden  rounded rounded-xl">
       <img
         v-for="(thumb, idx) in thumbnails"
         :key="idx"
-        src="https://picsum.photos/80 " 
-        class="w-full h-full object-cover"
+        src="https://picsum.photos/200 " 
+        class="w-full h-full object-cover "
       />
     </div>
     <p class="mt-2 text-center text-sm font-medium text-left py-5 pl-2">{{ props.album.title }}</p>

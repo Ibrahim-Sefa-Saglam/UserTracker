@@ -113,5 +113,17 @@ onMounted(async () => {
         <span>{{ item.label }}</span>
       </router-link>
     </template>
+     
+    <div class="flex flex-row items-center gap-3 px-4  border-t pt-3  border-gray-300 mx-4 mt-auto">
+      <img
+        src="../assets/n2photo.png"
+        alt="Profile"
+        class="w-10 h-10 rounded-full object-cover"
+      />
+      <span class="font-bold font-medium text-gray-800 ">
+        N2Mobil
+      </span>
+    </div>
+
   </div>
 </template>
