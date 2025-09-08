@@ -71,32 +71,29 @@ const selectAlbum = async (albumId: number) => {
       </template>
  
 
-      <!-- Scrollable grid -->
-      <div
-        class="grid grid-cols-3 gap-4 mt-4 place-items-center
-               h-4/5 overflow-y-auto p-2 pl-5"
-      >
-        <!-- Album list -->
-        <template v-if="!selectedAlbumId">
-          <AlbumCard
-            v-for="album in albums"
-            :key="album.id"
-            :album="album"
-            @select="selectAlbum"
-          />
-        </template>
+   <!-- Conditional container -->
+<template v-if="!selectedAlbumId">
+  <div class="grid grid-cols-3 gap-4 mt-4 place-items-center h-4/5 overflow-y-auto p-2 pl-5">
+    <AlbumCard
+      v-for="album in albums"
+      :key="album.id"
+      :album="album"
+      @select="selectAlbum"
+    />
+  </div>
+</template>
 
-        <!-- Photo list -->
-        <template v-else>
-          <img
-            v-for="photo in photos"
-            :key="photo.id"
-            src="https://picsum.photos/80 " 
-            :alt="photo.title"
-            class="w-40 h-40 object-cover rounded shadow"
-          />
-        </template>
-      </div>
+<template v-else>
+  <div class="flex flex-wrap gap-4 mt-4 h-4/5 overflow-y-auto p-2 pl-5">
+    <img
+      v-for="photo in photos"
+      :key="photo.id"
+      src="https://picsum.photos/200"
+      :alt="photo.title"
+      class="w-40 h-40 object-cover rounded shadow"
+    />
+  </div>
+</template>
     </div>
   </div>
 </template>
