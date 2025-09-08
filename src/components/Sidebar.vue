@@ -6,7 +6,7 @@ const route = useRoute();
 
 const section = computed(() => {
   const parts = route.path.split("/");
-  return parts[1] || ""; // e.g. /todos/1 -> "todos"
+  return parts[1] || ""; 
 });
 
 const navItems = [

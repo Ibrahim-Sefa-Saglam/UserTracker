@@ -18,7 +18,7 @@ const thumbnails = ref<Photo[]>([]);
 onMounted(async () => {
   const res = await fetch(`https://jsonplaceholder.typicode.com/albums/${props.album.id}/photos`);
   const data: Photo[] = await res.json();
-  thumbnails.value = data.slice(0, 4); // only first 4
+  thumbnails.value = data.slice(0, 4); 
 });
 </script>
 

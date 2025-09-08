@@ -14,7 +14,6 @@ interface Todo {
 const router = useRouter()
 const todos = ref<Todo[]>([])
 
-// fetch todos when component mounts
 onMounted(async () => {
   const selectedUserId = localStorage.getItem("selectedUserId")
   if (!selectedUserId) return
@@ -27,7 +26,6 @@ onMounted(async () => {
   }
 })
 
-// navigate back to /users
 const goHome = () => {
   router.push('/users')
 }

@@ -20,7 +20,6 @@ const selectedPost = ref({
   body: 'This is the body of the post...'
 })
 
-// fetch posts
 onMounted(async () => {
   const selectedUserId = localStorage.getItem("selectedUserId")
   if (!selectedUserId) return

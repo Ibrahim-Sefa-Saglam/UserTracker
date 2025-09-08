@@ -20,7 +20,6 @@ defineEmits<{
 
 const comments = ref<Comment[]>([])
 
-// Fetch comments when modal is shown or post changes
 watch(
   () => props.show,
   async (val) => {
@@ -40,7 +39,7 @@ watch(
   <div v-if="show" class="fixed inset-0 bg-[#4D4D4D74] flex items-center justify-center z-50">
     <div class="bg-white w-4/5 h-4/5 rounded-[20px] shadow-lg flex flex-col p-5">
       
-      <!-- Header 7% -->
+      <!-- header -->
       <div class="flex justify-between items-start px-6 py-2 h-[7%] ">
         <h2 class="text-2xl font-poppins  font-bold">{{ post.title }}</h2>
         <button @click="$emit('close')" class="text-gray-600 hover:text-gray-900 font-bold">
@@ -48,25 +47,25 @@ watch(
         </button>
       </div>
 
-      <!-- Main content 93% -->
+      <!-- main -->
       <div class="flex flex-row h-[93%] mt-5">
         
-        <!-- Post body 5/9 -->
+        <!-- body  -->
         <div class="w-[60%] p-4 overflow-y-auto border-r border-r-[#5C6672] pl-10">
           <p class="font-poppins text-gray-800 whitespace-pre-wrap">{{ post.body }}</p>
         </div>
 
-        <!-- Comments 4/9 -->
+        <!-- comments -->
         <div class="px-4 pb-8 flex flex-col overflow-y-auto">
           <h1 class="font-poppins font-semibold text-2xl mb-4">Comments</h1>
           
           <div v-for="comment in comments" :key="comment.id" class="flex flex-row py-2 rounded-sm">
-            <!-- Profile picture 1/5 -->
+            <!-- pfp -->
             <div class="w-1/8 flex flex-col items-center ">
               <img src="https://picsum.photos/80" alt="profile" class="w-10 h-10 rounded-full object-cover mb-1" />
             </div>
 
-            <!-- Comment content 4/5 -->
+            <!-- comment content -->
             <div class=" pl-2">
               <p class="font-poppins  font-semibold text-gray-700">{{ comment.name }}</p>
               <p class="font-poppins text-gray-600 text-sm whitespace-pre-wrap">{{ comment.body }}</p>
